@@ -18,18 +18,16 @@ public class AddPlayers extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_players);
 
-        // Getting references to the EditText views
         final EditText playerOne = findViewById(R.id.PlayerOneName);
         final EditText playerTwo = findViewById(R.id.PlayerTwoName);
 
-        // Getting reference to the Button
         final Button startGameBtn = findViewById(R.id.StartGameBtn);
 
-        // Set a click listener for the start game button
+
         startGameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the players' names
+
                 final String getPlayerOneName = playerOne.getText().toString();
                 final String getPlayerTwoName = playerTwo.getText().toString();
 
