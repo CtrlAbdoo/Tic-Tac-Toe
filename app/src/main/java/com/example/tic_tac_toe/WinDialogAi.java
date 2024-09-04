@@ -9,21 +9,20 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-public class WinDialog extends Dialog {
+public class WinDialogAi extends Dialog {
 
     private final String message;
-    private final MainActivity mainActivity;
+    private final Ai aiActivity;
 
-    public WinDialog(@NonNull Context context, String message, MainActivity mainActivity) {
+    public WinDialogAi(@NonNull Context context, String message, Ai aiActivity) {
         super(context);
         this.message = message;
-        this.mainActivity = mainActivity;
+        this.aiActivity = aiActivity;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.win_dialog_layout);
 
         final TextView messagTxt = findViewById(R.id.messageTxt);
@@ -34,7 +33,7 @@ public class WinDialog extends Dialog {
         startAgainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.restartMatch();
+                aiActivity.restartMatch(); // Use aiActivity to call restartMatch
                 dismiss();
             }
         });
