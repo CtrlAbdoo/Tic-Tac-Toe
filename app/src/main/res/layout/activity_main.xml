@@ -16,6 +16,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
+
         <!-- Player One Layout -->
         <LinearLayout
             android:id="@+id/PlayerOneLayout"
