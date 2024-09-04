@@ -3,14 +3,12 @@ package com.example.tic_tac_toe;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class AddPlayers extends AppCompatActivity {
 
@@ -20,22 +18,29 @@ public class AddPlayers extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_players);
 
+        // Getting references to the EditText views
         final EditText playerOne = findViewById(R.id.PlayerOneName);
         final EditText playerTwo = findViewById(R.id.PlayerTwoName);
-        final EditText startGameBtn = findViewById(R.id.StartGameBtn);
 
+        // Getting reference to the Button
+        final Button startGameBtn = findViewById(R.id.StartGameBtn);
+
+        // Set a click listener for the start game button
         startGameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Get the players' names
                 final String getPlayerOneName = playerOne.getText().toString();
                 final String getPlayerTwoName = playerTwo.getText().toString();
 
-                if(getPlayerOneName.isEmpty()||getPlayerTwoName.isEmpty()){
+                // Check if names are empty
+                if (getPlayerOneName.isEmpty() || getPlayerTwoName.isEmpty()) {
                     Toast.makeText(AddPlayers.this, "Please enter players names", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
+                    // Start the MainActivity and pass player names
                     Intent intent = new Intent(AddPlayers.this, MainActivity.class);
-                    intent.putExtra("playerOne",getPlayerOneName);
-                    intent.putExtra("playerTwo",getPlayerTwoName);
+                    intent.putExtra("playerOne", getPlayerOneName);
+                    intent.putExtra("playerTwo", getPlayerTwoName);
                     startActivity(intent);
                 }
             }
