@@ -196,8 +196,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Update the score display
     private void updateScoreDisplay() {
-        playerOneScoreText.setText(String.valueOf(playerOneScore));
-        playerTwoScoreText.setText(String.valueOf(playerTwoScore));
+        playerOneScoreText.setText(String.valueOf("socre : "+playerOneScore));
+        playerTwoScoreText.setText(String.valueOf("socre : "+playerTwoScore));
     }
 
     // Reset the scores

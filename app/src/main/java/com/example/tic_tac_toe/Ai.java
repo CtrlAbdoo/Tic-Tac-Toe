@@ -58,7 +58,6 @@ public class Ai extends AppCompatActivity {
         // Initialize views
         initializeViews();
 
-        // Retrieve player names from intent
         playerOneName.setText("Me");
         playerTwoName.setText("Bot");
 
@@ -281,7 +280,7 @@ public class Ai extends AppCompatActivity {
 
     // Update score display
     private void updateScoreDisplay() {
-        playerOneScoreText.setText(String.valueOf(playerOneScore));
-        playerTwoScoreText.setText(String.valueOf(playerTwoScore));
+        playerOneScoreText.setText(String.valueOf("socre : "+playerOneScore));
+        playerTwoScoreText.setText(String.valueOf("socre : "+playerTwoScore));
     }
 }
